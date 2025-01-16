@@ -1,6 +1,6 @@
-extends CharacterBody2D
+extends StaticBody2D
 
-@export var speed = 20000
+@export var speed = 500
 @export var alternative_controls = false
 var direction: Vector2 = Vector2.ZERO
 
@@ -15,5 +15,4 @@ func get_input():
 		direction.y = Input.get_axis('up', 'down')
 
 func move(delta: float):
-	velocity.y = direction.y * delta * speed
-	move_and_slide()
+	position.y += direction.y * delta * speed
