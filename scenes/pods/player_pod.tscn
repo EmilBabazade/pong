@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkwb8knnd2cc"]
+
+[ext_resource type="Script" path="res://scenes/pods/player_pod.gd" id="1_0figl"]
+[ext_resource type="Texture2D" uid="uid://3tiu5owbgpfj" path="res://graphics/Paddle_1.png" id="1_yl1qp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frh6w"]
+size = Vector2(16, 106)
+
+[node name="PlayerPod" type="CharacterBody2D"]
+script = ExtResource("1_0figl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yl1qp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_frh6w")

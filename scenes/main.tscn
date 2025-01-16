@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp3h12qffaqt4"]
+
+[ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_x0q40"]
+
+[node name="Main" type="Node2D"]
+
+[node name="PlayerPod" parent="." instance=ExtResource("1_x0q40")]
+position = Vector2(1117, 322)
+alternative_controls = true
+
+[node name="PlayerPod2" parent="." instance=ExtResource("1_x0q40")]
+position = Vector2(38, 322)
