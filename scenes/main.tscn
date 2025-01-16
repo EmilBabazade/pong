@@ -1,12 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp3h12qffaqt4"]
+[gd_scene load_steps=4 format=3 uid="uid://bp3h12qffaqt4"]
 
 [ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_x0q40"]
+[ext_resource type="Texture2D" uid="uid://dgx8t7movholq" path="res://graphics/Background  Grid.png" id="2_el8xa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qymxe"]
+size = Vector2(1183, 20)
 
 [node name="Main" type="Node2D"]
 
-[node name="PlayerPod" parent="." instance=ExtResource("1_x0q40")]
+[node name="Players" type="Node2D" parent="."]
+
+[node name="PlayerPod" parent="Players" instance=ExtResource("1_x0q40")]
 position = Vector2(1117, 322)
 alternative_controls = true
 
-[node name="PlayerPod2" parent="." instance=ExtResource("1_x0q40")]
+[node name="PlayerPod2" parent="Players" instance=ExtResource("1_x0q40")]
 position = Vector2(38, 322)
+
+[node name="BackgroundGrid" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(579, 321)
+scale = Vector2(0.942187, 0.948611)
+texture = ExtResource("2_el8xa")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall"]
+position = Vector2(577, -10)
+shape = SubResource("RectangleShape2D_qymxe")
+
+[node name="BottomWall" type="StaticBody2D" parent="Walls"]
+position = Vector2(-8, 684)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
+position = Vector2(586, -25)
+shape = SubResource("RectangleShape2D_qymxe")
