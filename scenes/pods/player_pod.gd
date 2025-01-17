@@ -6,6 +6,8 @@ var direction: Vector2 = Vector2.ZERO
 
 func _process(delta: float) -> void:
 	get_input()
+
+func _physics_process(delta: float) -> void:
 	move(delta)
 
 func get_input():
@@ -15,4 +17,4 @@ func get_input():
 		direction.y = Input.get_axis('up', 'down')
 
 func move(delta: float):
-	position.y += direction.y * delta * speed
+	move_and_collide(direction * delta * speed)

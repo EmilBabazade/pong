@@ -14,7 +14,7 @@ func goal():
 	var ball: Node2D = get_tree().get_first_node_in_group('ball')
 	if ball:
 		ball.queue_free()
-		await get_tree().create_timer(2).timeout
+		await get_tree().create_timer(1).timeout
 		spawn_ball()
 
 
