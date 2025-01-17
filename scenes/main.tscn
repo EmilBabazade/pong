@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp3h12qffaqt4"]
+[gd_scene load_steps=7 format=3 uid="uid://bp3h12qffaqt4"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_hsn2u"]
 [ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_x0q40"]
 [ext_resource type="Texture2D" uid="uid://dgx8t7movholq" path="res://graphics/Background  Grid.png" id="2_el8xa"]
-[ext_resource type="PackedScene" uid="uid://cs4rosas2im3e" path="res://scenes/objects/ball.tscn" id="3_q6ix3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qymxe"]
 size = Vector2(1183, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnkpi"]
+size = Vector2(25, 695)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cprgi"]
+size = Vector2(24, 695.5)
+
 [node name="Main" type="Node2D"]
+script = ExtResource("1_hsn2u")
 
 [node name="Players" type="Node2D" parent="."]
 
@@ -39,5 +46,19 @@ position = Vector2(-8, 684)
 position = Vector2(586, -25)
 shape = SubResource("RectangleShape2D_qymxe")
 
-[node name="Ball" parent="." instance=ExtResource("3_q6ix3")]
-position = Vector2(578, 319)
+[node name="Goals" type="Node2D" parent="."]
+
+[node name="Player1Goal" type="Area2D" parent="Goals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/Player1Goal"]
+position = Vector2(1187.5, 324.5)
+shape = SubResource("RectangleShape2D_jnkpi")
+
+[node name="Player2Goal" type="Area2D" parent="Goals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/Player2Goal"]
+position = Vector2(-33, 323.75)
+shape = SubResource("RectangleShape2D_cprgi")
+
+[connection signal="body_entered" from="Goals/Player1Goal" to="." method="_on_player_1_goal_body_entered"]
+[connection signal="body_entered" from="Goals/Player2Goal" to="." method="_on_player_2_goal_body_entered"]

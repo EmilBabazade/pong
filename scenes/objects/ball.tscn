@@ -8,7 +8,7 @@ radius = 10.0499
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vh605"]
 
-[node name="Ball" type="CharacterBody2D"]
+[node name="Ball" type="CharacterBody2D" groups=["ball"]]
 script = ExtResource("1_kowyf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

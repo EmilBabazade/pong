@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
 @export var speed = 500
-var direction = Vector2(1, 0)
+var direction: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var rng = RandomNumberGenerator.new()
+	var random_num = rng.randi_range(0, 100)
+	direction = Vector2(1, 0) if random_num % 2 == 0 else Vector2(-1, 0)
 	velocity = direction * speed
 
 
@@ -20,12 +23,3 @@ func _physics_process(delta: float) -> void:
 		else:
 			collision_normal = collision.get_normal()
 		direction = direction.bounce(collision_normal).normalized()
-
-#func _on_collision_detector_body_entered(body: Node2D) -> void:
-	#if body.is_in_group('player'):
-		#var collision_normal = (global_position - body.global_position).normalized()
-		#direction = direction.bounce(collision_normal).normalized()
-		#print("Direction Before: ", direction)
-		#print("Direction After: ", direction)
-		##global_position.direction_to()
-		##print(linear_velocity)
