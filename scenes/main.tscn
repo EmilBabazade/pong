@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bp3h12qffaqt4"]
+[gd_scene load_steps=8 format=3 uid="uid://bp3h12qffaqt4"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_hsn2u"]
 [ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_x0q40"]
 [ext_resource type="Texture2D" uid="uid://dgx8t7movholq" path="res://graphics/Background  Grid.png" id="2_el8xa"]
+[ext_resource type="PackedScene" uid="uid://dwus7oiudcpkt" path="res://scenes/user_interface/ui.tscn" id="4_yeyxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qymxe"]
 size = Vector2(1183, 20)
@@ -59,6 +60,8 @@ shape = SubResource("RectangleShape2D_jnkpi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Goals/Player2Goal"]
 position = Vector2(-33, 323.75)
 shape = SubResource("RectangleShape2D_cprgi")
+
+[node name="UI" parent="." instance=ExtResource("4_yeyxg")]
 
 [connection signal="body_entered" from="Goals/Player1Goal" to="." method="_on_player_1_goal_body_entered"]
 [connection signal="body_entered" from="Goals/Player2Goal" to="." method="_on_player_2_goal_body_entered"]

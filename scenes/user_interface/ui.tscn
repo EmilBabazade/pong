@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwus7oiudcpkt"]
+
+[ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_2l4i1"]
+[ext_resource type="FontFile" uid="uid://dtuhsft35pcyr" path="res://graphics/Teko-VariableFont_wght.ttf" id="1_g3hhu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jamol"]
+font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_c02rb"]
+font_size = 40
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_2l4i1")
+
+[node name="Player1Score" type="MarginContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -53.0
+offset_bottom = 55.0
+grow_horizontal = 0
+theme_override_constants/margin_right = 55
+
+[node name="Label" type="Label" parent="Player1Score"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g3hhu")
+text = "0"
+label_settings = SubResource("LabelSettings_jamol")
+
+[node name="Player2Score" type="MarginContainer" parent="."]
+offset_right = 23.0
+offset_bottom = 55.0
+theme_override_constants/margin_left = 60
+
+[node name="Label" type="Label" parent="Player2Score"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_g3hhu")
+text = "0"
+label_settings = SubResource("LabelSettings_c02rb")
