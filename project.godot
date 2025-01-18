@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="pong"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/user_interface/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://scenes/globals/globals.gd"
 
 [display]
 

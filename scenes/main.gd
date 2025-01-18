@@ -51,7 +51,7 @@ func check_if_winning():
 
 
 func _on_ui_quit() -> void:
-	get_tree().quit()
+	get_tree().change_scene_to_file('res://scenes/user_interface/main_menu.tscn')
 
 
 func _on_ui_restart() -> void:

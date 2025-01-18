@@ -61,6 +61,7 @@ label_settings = SubResource("LabelSettings_rlxvw")
 
 [node name="Restart" type="Button" parent="GameOver"]
 visible = false
+modulate = Color(0.129412, 0.564706, 0.670588, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g3hhu")
 theme_override_font_sizes/font_size = 50
@@ -68,10 +69,11 @@ text = "RESTART"
 
 [node name="Quit" type="Button" parent="GameOver"]
 visible = false
+modulate = Color(0.807843, 0.352941, 0.168627, 1)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g3hhu")
 theme_override_font_sizes/font_size = 50
-text = "QUIT"
+text = "QUIT TO MENU"
 
 [connection signal="pressed" from="GameOver/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="GameOver/Quit" to="." method="_on_quit_pressed"]
