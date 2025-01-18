@@ -20,10 +20,6 @@ script = ExtResource("1_hsn2u")
 [node name="Players" type="Node2D" parent="."]
 
 [node name="PlayerPod" parent="Players" instance=ExtResource("1_x0q40")]
-position = Vector2(1117, 322)
-alternative_controls = true
-
-[node name="PlayerPod2" parent="Players" instance=ExtResource("1_x0q40")]
 position = Vector2(38, 322)
 
 [node name="BackgroundGrid" type="Sprite2D" parent="."]

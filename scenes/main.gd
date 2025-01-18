@@ -1,13 +1,26 @@
 extends Node2D
 
 @onready var ball_scene: PackedScene = preload("res://scenes/objects/ball.tscn")
+@onready var player_scene: PackedScene = preload("res://scenes/pods/player_pod.tscn")
+@onready var ai_scene: PackedScene = preload("res://scenes/pods/ai_pod.tscn")
 @export var winning_score: int = 5
 var player1_score = 0
 var player2_score = 0
 var game_finished = false
 
 func _ready() -> void:
+	spawn_player2()
 	spawn_ball()
+
+func spawn_player2():
+	var player2: PlayerPod
+	if Globals.ai:
+		player2 = ai_scene.instantiate()
+	else:
+		player2 = player_scene.instantiate()
+		player2.alternative_controls = true
+	player2.position = Vector2(1117, 322)
+	$Players.add_child(player2)
 
 func spawn_ball():
 	if game_finished:

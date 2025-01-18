@@ -1,6 +1,7 @@
 extends StaticBody2D
+class_name PlayerPod
 
-@export var speed = 500
+@export var speed = 600
 @export var alternative_controls = false
 var direction: Vector2 = Vector2.ZERO
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpyx1i7n23hlt"]
+
+[ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_ekoa5"]
+[ext_resource type="Script" path="res://scenes/pods/ai_pod.gd" id="2_1wvni"]
+
+[node name="AiPod" instance=ExtResource("1_ekoa5")]
+script = ExtResource("2_1wvni")
