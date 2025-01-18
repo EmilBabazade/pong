@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwus7oiudcpkt"]
+[gd_scene load_steps=6 format=3 uid="uid://dwus7oiudcpkt"]
 
 [ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_2l4i1"]
 [ext_resource type="FontFile" uid="uid://dtuhsft35pcyr" path="res://graphics/Teko-VariableFont_wght.ttf" id="1_g3hhu"]
@@ -8,6 +8,10 @@ font_size = 40
 
 [sub_resource type="LabelSettings" id="LabelSettings_c02rb"]
 font_size = 40
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlxvw"]
+font = ExtResource("1_g3hhu")
+font_size = 100
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_2l4i1")
@@ -37,3 +41,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_g3hhu")
 text = "0"
 label_settings = SubResource("LabelSettings_c02rb")
+
+[node name="VictoryText" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -11.5
+offset_right = 25.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_rlxvw")

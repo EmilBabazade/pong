@@ -44,7 +44,7 @@ shape = SubResource("RectangleShape2D_qymxe")
 position = Vector2(-8, 684)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BottomWall"]
-position = Vector2(586, -25)
+position = Vector2(586, -26)
 shape = SubResource("RectangleShape2D_qymxe")
 
 [node name="Goals" type="Node2D" parent="."]

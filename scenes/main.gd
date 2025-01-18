@@ -1,8 +1,10 @@
 extends Node2D
 
 @onready var ball_scene: PackedScene = preload("res://scenes/objects/ball.tscn")
+@onready var winning_score: int = 5
 var player1_score = 0
 var player2_score = 0
+var game_finished = false
 
 func _ready() -> void:
 	spawn_ball()
@@ -21,12 +23,26 @@ func goal():
 
 
 func _on_player_1_goal_body_entered(body: Node2D) -> void:
+	if game_finished:
+		return
 	player2_score += 1
 	$UI.set_player2_score(player2_score)
+	check_if_winning()
 	goal()
 
 
 func _on_player_2_goal_body_entered(body: Node2D) -> void:
+	if game_finished:
+		return
 	player1_score += 1
 	$UI.set_player1_score(player1_score)
+	check_if_winning()
 	goal()
+
+func check_if_winning():
+	if player1_score >= winning_score:
+		$UI.set_victory_text('PLAYER 1 IS VICTORIOUS !')
+		game_finished = true
+	if player2_score >= winning_score:
+		$UI.set_victory_text('PLAYER 2 IS VICTORIOUS !')
+		game_finished = true
