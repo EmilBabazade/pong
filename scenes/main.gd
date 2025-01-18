@@ -24,7 +24,7 @@ func goal():
 		spawn_ball()
 
 
-func _on_player_1_goal_body_entered(body: Node2D) -> void:
+func _on_player_1_goal_body_entered(_body: Node2D) -> void:
 	if game_finished:
 		return
 	player2_score += 1
@@ -33,7 +33,7 @@ func _on_player_1_goal_body_entered(body: Node2D) -> void:
 	goal()
 
 
-func _on_player_2_goal_body_entered(body: Node2D) -> void:
+func _on_player_2_goal_body_entered(_body: Node2D) -> void:
 	if game_finished:
 		return
 	player1_score += 1

@@ -4,7 +4,7 @@ extends StaticBody2D
 @export var alternative_controls = false
 var direction: Vector2 = Vector2.ZERO
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	get_input()
 
 func _physics_process(delta: float) -> void:

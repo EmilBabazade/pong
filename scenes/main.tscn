@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_hsn2u"]
 [ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_x0q40"]
-[ext_resource type="Texture2D" uid="uid://dgx8t7movholq" path="res://graphics/Background  Grid.png" id="2_el8xa"]
+[ext_resource type="Texture2D" uid="uid://bjniofr43fj4" path="res://graphics/Background Empty.png" id="3_7jfsf"]
 [ext_resource type="PackedScene" uid="uid://dwus7oiudcpkt" path="res://scenes/user_interface/ui.tscn" id="4_yeyxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qymxe"]
@@ -30,7 +30,7 @@ position = Vector2(38, 322)
 z_index = -1
 position = Vector2(579, 321)
 scale = Vector2(0.942187, 0.948611)
-texture = ExtResource("2_el8xa")
+texture = ExtResource("3_7jfsf")
 
 [node name="Walls" type="Node2D" parent="."]
 
