@@ -33,6 +33,8 @@ func goal():
 	var ball: Node2D = get_tree().get_first_node_in_group('ball')
 	if ball:
 		ball.queue_free()
+		if not game_finished:
+			$GoalAudio.play()
 		await get_tree().create_timer(0.5).timeout
 		spawn_ball()
 
@@ -58,9 +60,11 @@ func check_if_winning():
 	if player1_score >= winning_score:
 		$UI.game_over('PLAYER 1 IS VICTORIOUS !')
 		game_finished = true
+		$GameFInishedAudio.play()
 	if player2_score >= winning_score:
 		$UI.game_over('PLAYER 2 IS VICTORIOUS !')
 		game_finished = true
+		$GameFInishedAudio.play()
 
 
 func _on_ui_quit() -> void:

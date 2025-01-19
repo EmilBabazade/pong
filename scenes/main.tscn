@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bp3h12qffaqt4"]
+[gd_scene load_steps=10 format=3 uid="uid://bp3h12qffaqt4"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_hsn2u"]
 [ext_resource type="PackedScene" uid="uid://dkwb8knnd2cc" path="res://scenes/pods/player_pod.tscn" id="1_x0q40"]
 [ext_resource type="Texture2D" uid="uid://bjniofr43fj4" path="res://graphics/Background Empty.png" id="3_7jfsf"]
 [ext_resource type="PackedScene" uid="uid://dwus7oiudcpkt" path="res://scenes/user_interface/ui.tscn" id="4_yeyxg"]
+[ext_resource type="AudioStream" uid="uid://c5l7a7ewfsmg6" path="res://sound/JDSherbert - Ultimate UI SFX Pack - Cancel - 2.wav" id="5_5wl3l"]
+[ext_resource type="AudioStream" uid="uid://dovkdeqg75iav" path="res://sound/JDSherbert - Ultimate UI SFX Pack - Error - 1.wav" id="6_ogjy8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qymxe"]
 size = Vector2(1183, 20)
@@ -16,6 +18,7 @@ size = Vector2(24, 695.5)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hsn2u")
+winning_score = 2
 
 [node name="Players" type="Node2D" parent="."]
 
@@ -58,6 +61,12 @@ position = Vector2(-33, 323.75)
 shape = SubResource("RectangleShape2D_cprgi")
 
 [node name="UI" parent="." instance=ExtResource("4_yeyxg")]
+
+[node name="GoalAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5wl3l")
+
+[node name="GameFInishedAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ogjy8")
 
 [connection signal="body_entered" from="Goals/Player1Goal" to="." method="_on_player_1_goal_body_entered"]
 [connection signal="body_entered" from="Goals/Player2Goal" to="." method="_on_player_2_goal_body_entered"]
