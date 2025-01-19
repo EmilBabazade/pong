@@ -25,4 +25,6 @@ func _physics_process(delta: float) -> void:
 			collision_normal = (global_position - collider.global_position).normalized()
 		else:
 			collision_normal = collision.get_normal()
+		$AudioStreamPlayer.pitch_scale = randf_range(0.8, 1.2)
+		$AudioStreamPlayer.play()
 		direction = direction.bounce(collision_normal).normalized()
